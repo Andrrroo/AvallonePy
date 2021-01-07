@@ -1,3 +1,4 @@
+
 import string
 import numpy as np
 import matplotlib.pyplot as plt
@@ -9,7 +10,7 @@ f = open("dati4.txt", 'r')
 # per ottenere una lista di righe del file
 
 # stampiamo la prima riga
-print(f.readline()) 
+# print(f.readline()) 
 
 # possiamo fare un ciclo e prendere riga per riga 
 
