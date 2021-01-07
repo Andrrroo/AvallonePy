@@ -49,6 +49,5 @@ print(type(coordY))
 
 # ora sono pronte per essere usate anche nei grafici
 
-plt.plot(coordX,coordY)
-plt.ylabel('some numbers')
+plt.plot(coordX,coordY, 'ro')
 plt.show()
