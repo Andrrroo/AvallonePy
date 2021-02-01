@@ -1,7 +1,8 @@
 import string
 import numpy as np
 import matplotlib.pyplot as plt
-from guizero import App, Text, PushButton
+from guizero import *
+
 f = open("dati4.txt", 'r')
 
 coordX = []
