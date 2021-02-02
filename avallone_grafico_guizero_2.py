@@ -4,8 +4,24 @@ import matplotlib.pyplot as plt
 from guizero import *
 
 def get_file():
-    dati = app.select_file(filetypes=[["All files", "*.*"], ["Text documents", "*.txt"]])
     
+    f = open( app.select_file(filetypes=[["Text documents", "*.txt"]]) , 'r')
+
+    coordX = []
+    coordY = []
+
+    for riga in f:
+            valori = str(f.readline())  
+            Nval = len(valori)          
+            valori = valori.strip('\n') 
+            valori = valori.split(',')  
+            valori = list(valori)       
+            print(valori)
+            coordX.append(int(valori[0])) 
+            coordY.append(int(valori[1])) 
+
+    f.close()
+
     print ("X: ",coordX)
     print ("Y: ",coordY)
 
@@ -22,23 +38,6 @@ def get_file():
     plt.scatter(coordX,coordY)
     plt.show()
 
-
-f = open( "dati4.txt" , 'r')
-
-coordX = []
-coordY = []
-
-for riga in f:
-        valori = str(f.readline())  
-        Nval = len(valori)          
-        valori = valori.strip('\n') 
-        valori = valori.split(',')  
-        valori = list(valori)       
-        print(valori)
-        coordX.append(int(valori[0])) 
-        coordY.append(int(valori[1])) 
-
-f.close()
 
 
 app = App(title="Grafico")
