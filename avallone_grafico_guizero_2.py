@@ -44,7 +44,7 @@ app = App(title="Grafico")
 message = Text(app, text="Clicca qui per selezionare il file da aprire !")
 message2 = Text(app, text="I  I  I  I  I")
 message3 = Text(app, text="v v v v v")
-button : PushButton(app, text="Clicca qui", command= get_file)
+button = PushButton(app, text="Clicca qui", command= get_file)
 
 
 
