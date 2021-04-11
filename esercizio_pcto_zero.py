@@ -1,4 +1,4 @@
-A = int(inout("inserisci valore di A. "))
+A = int(input("inserisci valore di A. "))
 if A>=0:
     print("A è maggiore di 0")
 else:
