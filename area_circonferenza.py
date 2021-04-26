@@ -1,13 +1,13 @@
 import math
 
 def area_cerchio(r):
-    return round((math.pi * r), 2)
+    return math.pi * r
     
 
 def circonferenza_cerchio(r):
-    return round((2 * math.pi * r), 2)
+    return 2 * math.pi * r
 
-raggio = int(input("Inserisci valore raggio: "))
+raggio = input("Inserisci valore raggio: ")
 
 print("L'area del cerchio è:", area_cerchio(raggio))
 
