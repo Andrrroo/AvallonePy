@@ -1,7 +1,7 @@
 import math
 
 def area_cerchio(r):
-    return math.pi * r
+    return math.pi * (r**2)
     
 
 def circonferenza_cerchio(r):
