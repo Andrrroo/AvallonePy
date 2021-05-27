@@ -1,7 +1,7 @@
 import random
 
 n = 0
-N= 4655
+N= int(input("Inserisci numero di punti: "))
 
 for i in range(N):
     x = random.random()
