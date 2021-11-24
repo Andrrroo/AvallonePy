@@ -1,5 +1,3 @@
-# classe calcolo combinatorio
-
 class calcComb():
 
     def __init__(self, stringa):
