@@ -1,3 +1,5 @@
+from itertools import permutations
+
 class calcComb():
 
     def __init__(self, stringa):
@@ -28,11 +30,19 @@ class calcComb():
         esempi di dictionary sono presenti nel file elementi_base/dictionary.py
         '''
 
-    def cerca(str):
-        '''
-        verificare se la STRINGA attributo di istanza è presente
-        nel file word.italian.txt
-        '''
+    def cerca(stringa):
+        
+        
+        it = 'words.italian.txt'
+        f = open(it, 'r')
+        line = f.readline()
+
+        for line in f:
+
+            if stringa == line[: -1]:
+                return "vero"
+
+
         pass
 
     def fattoriale(n):
@@ -50,24 +60,47 @@ class calcComb():
         '''
         pass
 
-    def anagrammi(self):
-        '''
-        a partire dalla stringa (caratterizzante l'oggetto) si restituisca la lista di tutti
-        gli anagrammi possibili. E' presente uno script nel repo che esegue questo compito.
-        '''
-        pass
+    def anagrammi(self, stringa):
+    
+
+        self.__lettere = list(stringa)
+
+        self.__permutazioni = list(permutations(self.__lettere))
+
+        temp = ''
+        self.__anagrammi = []
+
+
+        for i in self.__permutazioni:
+            for carattere in i:
+        
+                temp += carattere 
+
+    
+            self.__anagrammi.append(temp)
+    
+            temp = ''
+
+        return self.__anagrammi
+    
+        
     
     def confUtil(self):
-        '''
-        confUtil mette insieme diversi metodi basilari, lo scopo è:
-        a partire dalla lista di tutti gli anagrammi, verifica parola per parola la sua
-        presenza all'interno del file delle parole di senso compiuto, cancellando le altre.
+       
+       it = 'words.italian.txt'
+       f = open(it, 'r')
+       line = f.readline()
+       
 
-        si consiglia l'utilizzo di anagrammi e cerca, presenti nel repo e da trasformare in metodi.
 
-        è possibile in una seconda versione la ricefrca di parole in altre lingue. 
-        '''
-        pass
+       for i in self.__anagrammi:
+            stringa = self.__anagrammi[i]
+            i =+ 1
+            for line in f:
+                if stringa == line[:-1]:
+                    print(stringa)
+                    return "vero"
+
 
     # PERMUTAZIONI
 
