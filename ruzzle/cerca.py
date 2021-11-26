@@ -1,6 +1,6 @@
 
 
-str= "pop"  
+str= "casa"  
 it = 'words.italian.txt'
 
 f = open(it, 'r')
