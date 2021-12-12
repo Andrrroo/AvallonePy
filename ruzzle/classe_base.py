@@ -40,10 +40,10 @@ class calcComb():
         for line in f:
 
             if stringa == line[: -1]:
-                return "vero"
+                return true #"vero" è una stringa, deve restituire un valore booleano
 
-
-        pass
+        return false  # restituisce falso se non la trova
+        
 
     def fattoriale(n):
         '''
@@ -81,7 +81,7 @@ class calcComb():
     
             temp = ''
 
-        return self.__anagrammi
+        return self.__anagrammi # in realtà basta salvarlo nella variabile di istanza
     
         
     
