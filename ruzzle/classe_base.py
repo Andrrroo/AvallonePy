@@ -36,13 +36,14 @@ class calcComb():
         it = 'words.italian.txt'
         f = open(it, 'r')
         line = f.readline()
+        valore_stringa = False
 
         for line in f:
 
             if stringa == line[: -1]:
-                return true #"vero" è una stringa, deve restituire un valore booleano
+                valore_stringa = True #"vero" è una stringa, deve restituire un valore booleano
 
-        return false  # restituisce falso se non la trova
+        return "Falso"  # restituisce falso se non la trova
         
 
     def fattoriale(n):
