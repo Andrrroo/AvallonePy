@@ -100,7 +100,7 @@ class calcComb():
             for line in f:
                 if stringa == line[:-1]:
                     print(stringa)
-                    return "vero"
+                    return True
 
 
     # PERMUTAZIONI
