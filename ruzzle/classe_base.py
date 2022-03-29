@@ -1,4 +1,4 @@
-from itertools import permutations
+from itertools import permutations, combinations
 
 class calcComb():
 
@@ -43,7 +43,7 @@ class calcComb():
             if stringa == line[: -1]:
                 valore_stringa = True #"vero" è una stringa, deve restituire un valore booleano
 
-        return "Falso"  # restituisce falso se non la trova
+        return False  # restituisce falso se non la trova
         
 
     def fattoriale(n):
@@ -123,11 +123,10 @@ class calcComb():
         '''
         return 0
 
-    def permutConRip(self):
-        '''
-        generare e restituire la lista di permutazioni CON ripetizione
-        '''
-        return 0
+    def permutConRip(self, stringa):
+        permutazioneRipetizioni = list(permutations(stringa))
+
+        return permutazioneRipetizioni
 
     # DISPOSIZIONI
 
