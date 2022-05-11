@@ -44,6 +44,11 @@ label_locale.place(x=0, y=0)
 
 locale_schermata.full_screen = True
 
+classifica_schermata = Window(app, title = 'Classifica', width = 1920, height = 1080, visible = False)
+label_classifica = Label(classifica_schermata.tk, image=bg)
+label_classifica.place(x = 0, y = 0)
+
+classifica_schermata.full_screen = True
 
 campagna_schermata = Window(app, title='Campagna', width=1920, height=1080, visible= False)
 label_campagna = Label(campagna_schermata.tk, image=bg)
@@ -55,27 +60,38 @@ campagna_schermata.full_screen = True
 
 
 #PULSANTI
+def classifica_function():
+    classifica_schermata.show()
+    
+
 def esci_function():
     app.destroy()
 
 def locale_function():
     locale_schermata.show()
+    
 
 def campagna_function():
     #campagna_schermata.show()
-    app.warn("Modalità in sviluppo", "Questa modalità di gioco è ancora in modalità di sviluppo. Torna presto per provarla!")
+    app.warn("Modalità in sviluppo...", "Questa modalità di gioco è ancora in modalità di sviluppo. Torna presto per provarla!")
 
 def chiudi_locale():
-    locale_schermata.destroy()
+    locale_schermata.visible = False
+    
 
 def chiudi_campagna():
-    campagna_schermata.destroy()
+    campagna_schermata.visible = False
+    
 
+def chiudi_classifica():
+    classifica_schermata.visible = False
+    
 
 
 
 locale = PushButton(app, image='Avallonepy/ruzzle/locale.png', command=locale_function)
 campagna = PushButton(app, image='Avallonepy/ruzzle/campagna.png', command=campagna_function)
+classifica = PushButton(app, image = 'Avallonepy/ruzzle/classifica.png', command = classifica_function)
 esci = PushButton(app, image='Avallonepy/ruzzle/esci.png', command=esci_function)
 
 locale_esci = PushButton(locale_schermata, command = chiudi_locale, image='Avallonepy/ruzzle/esci.png')
@@ -84,7 +100,7 @@ locale_esci = PushButton(locale_schermata, command = chiudi_locale, image='Avall
 
 gioca_locale = PushButton(locale_schermata, image='Avallonepy/ruzzle/gioca.png')
 
-
+classifica_esci = PushButton(classifica_schermata, command = chiudi_classifica, image='Avallonepy/ruzzle/esci.png')
 
 
 app.display()
