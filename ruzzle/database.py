@@ -3,15 +3,15 @@
 import redis
 from random import *
 
-r = redis.StrictRedis(host='localhost', port=6379, db=0)
+r = redis.StrictRedis(host='10.255.237.221', port=6379, password='1357642rVi0', db=0)
 
 # inizializzo la lista delle chiavi del DB
 r.keys()
 
 # r.set('chiave, "valore')
 
-r.set('mario', 'ilSuoValore')
-value = r.get('mario') 
+r.set('light', 'valore')
+value = r.get('light') 
 print(value)
 
 # valore incrementale
@@ -36,9 +36,17 @@ print(r.llen("lista")," elementi, tra il 2 ed 8: ", r.lrange("lista", 2,8))
 
 # https://www.html.it/pag/71229/sorted-set/
 
-partita = "scontroTraNGiocatori"
+partita = "partita"
 
 giocatori= []
+
+#nome_utente = input("Inserisci nome utente: ")
+
+#if nome_utente in giocatori:
+#    print(nome_utente, "già esistente")
+#else:
+#    giocatori.append(nome_utente)
+#    print("Il tuo nome utente è: ", nome_utente)
 
 for i in range(10):
     giocatori.append("player-" + str(i))

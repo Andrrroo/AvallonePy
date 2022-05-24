@@ -1,7 +1,12 @@
+from multiprocessing.connection import wait
 from guizero import *
 from tkinter import *
 import random
 import string
+from setuptools import Command
+from utils import *
+from logzero import logger, logfile
+from datetime import datetime, timedelta
 
 #INIZIALIZZAZIONE
 
@@ -56,7 +61,14 @@ label_campagna.place(x=0, y=0)
 
 campagna_schermata.full_screen = True
 
+gioca_schermata = Window(app, title="Gioca", width=1920, height=1080, visible = False)
+label_gioca = Label(gioca_schermata.tk, image=bg)
+parola_gioca = Label(text= "GIOVANNI")
+label_gioca.place(x=0, y=0)
 
+gioco_finito = Window(app, title="Gioco finito", width=1920, height=1080, visible= False)
+label_finito = Label(gioco_finito.tk, image=bg)
+label_finito.place(x=0, y=0)
 
 
 #PULSANTI
@@ -85,7 +97,19 @@ def chiudi_campagna():
 
 def chiudi_classifica():
     classifica_schermata.visible = False
-    
+
+def timer():
+    gioca_schermata.show()
+    start_time = datetime.now()
+    now_time = datetime.now()
+    while (now_time < start_time + timedelta(seconds=120)):
+        i = now_time
+        if now_time==0:
+            gioco_finito.show()
+            gioca_schermata.visible= False
+            while i>0:
+                print(i)
+        
 
 
 
@@ -98,7 +122,7 @@ locale_esci = PushButton(locale_schermata, command = chiudi_locale, image='Avall
 
 #campagna_esci = PushButton(campagna_schermata, command = chiudi_campagna, image='Avallonepy/ruzzle/esci.png')
 
-gioca_locale = PushButton(locale_schermata, image='Avallonepy/ruzzle/gioca.png')
+gioca_locale = PushButton(locale_schermata, image='Avallonepy/ruzzle/gioca.png', command=timer)
 
 classifica_esci = PushButton(classifica_schermata, command = chiudi_classifica, image='Avallonepy/ruzzle/esci.png')
 
